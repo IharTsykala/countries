@@ -1,0 +1,104 @@
+$backgroundApp: #ffffff
+$widthApp: 100vw
+$heightApp: 100vh
+$heightHeader: 10vh
+$minHeightHeader: 60px
+$widthListRequests: 30vw
+$display: grid!important
+$minWidthListRequest: 300px
+$amountBlocksInListRequests: 6
+$heightDividerInListRequests: 1vh
+$gapHeader: 50vw
+
+//=linear-gradient($deg, $rbc21, $rbc2, $rbc3)
+//	background: linear-gradient($deg, $rbc21, $rbc2, $rbc3)
+
+%blocksInListRequests
+	height: (($heightApp - $heightHeader) / $amountBlocksInListRequests) - $heightDividerInListRequests
+	margin: 0 !important
+	padding: 0 !important
+	width: $widthListRequests
+	max-width: $widthListRequests
+	min-width: $minWidthListRequest
+	
+%icon
+	height: $heightHeader / 3
+	width: $heightHeader / 3
+	cursor: pointer
+
+body
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+.wrapper
+  background: $backgroundApp
+  width: $widthApp
+		max-width: $widthApp
+  height: $heightApp
+		max-height: $heightApp
+  display: $display
+  grid-template-rows: $heightHeader 1fr
+	
+		.header
+			position: relative
+			min-height: $minHeightHeader
+			display: $display
+			grid-template-columns: $widthListRequests 1fr
+			gap: $gapHeader
+			
+			.header__request__container__search_icon
+				@extend %icon
+				margin-left: $widthListRequests / 7
+				
+				&:hover
+					color: rgba(0, 7, 117, 0.95)
+
+			.header__request__container__input
+				background: $backgroundApp
+				height: $heightHeader / 3
+				padding-left: $widthListRequests / 15
+				width: $widthListRequests / 2
+				border-radius: 10vw
+				
+			.header__version__container
+					display: $display
+					grid-template-columns: repeat(2, 1fr)
+					justify-items: center
+					gap: $gapHeader / 10
+				
+			.header__version__container__view
+				@extend %icon
+			
+		
+		.main
+			display: $display
+			grid-template-columns: $widthListRequests 1fr
+
+.list_request__container
+  border-right: 1px solid #1d56fd
+  min-width: $minWidthListRequest
+		max-height: $heightApp - $heightHeader
+		overflow-y: auto
+		overflow-x: hidden
+
+
+.card_request__container
+	@extend %blocksInListRequests
+	
+	button
+		@extend %blocksInListRequests
+
+.response__info__container
+	max-height: $heightApp - $heightHeader
+	padding: 1vw
+	overflow-y: auto
+	position: relative
+	
+	.response__info__modal
+		position: absolute
+		height: ($heightApp - $heightHeader) / 2
+		width: $widthApp - $widthListRequests / 2
+	
+
+	
