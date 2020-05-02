@@ -1,9 +1,9 @@
 /* Error: Tabs and spaces may not be mixed.
  *    ,
- * 69 |        //h6.bigSize
+ * 75 |        //h6.bigSize
  *    | ^^^^^^^
  *    '
- *   app.sass 69:1  root stylesheet */
+ *   app.sass 75:1  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Tabs and spaces may not be mixed.\a    \2577 \a 69 \2502         //h6.bigSize\d\a    \2502  ^^^^^^^\a    \2575 \a   app.sass 69:1  root stylesheet";
+  content: "Error: Tabs and spaces may not be mixed.\a    \2577 \a 75 \2502         //h6.bigSize\d\a    \2502  ^^^^^^^\a    \2575 \a   app.sass 75:1  root stylesheet";
 }

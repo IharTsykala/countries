@@ -9,8 +9,8 @@ $minWidthListRequest: 300px
 $amountBlocksInListRequests: 6
 $heightDividerInListRequests: 1vh
 $gapHeader: 50vw
-$fontSizeApp: 1.5rem
-$fontSizeBig: $fontSizeApp * 2
+$fontSizeApp: 1.2rem
+$fontSizeBig: $fontSizeApp * 1.5
 
 //=linear-gradient($deg, $rbc21, $rbc2, $rbc3)
 //	background: linear-gradient($deg, $rbc21, $rbc2, $rbc3)
@@ -38,6 +38,12 @@ body
 .bigFontSize
 	font-size: $fontSizeBig!important
 
+.bigFontSize span
+	font-size:  $fontSizeBig * 2 / 3
+
+.bigFontSize p
+	font-size: $fontSizeBig * 2 / 3
+
 .wrapper
 	position: relative
 	background: $backgroundApp
@@ -47,7 +53,7 @@ body
 	max-height: $heightApp
 	display: $display
 	grid-template-rows: $heightHeader 1fr
-	font-size: $fontSizeApp
+	//font-size: $fontSizeApp
 
 	.modal__window__container
 		position: absolute
@@ -137,6 +143,11 @@ body
 			li
 				display: $display
 				justify-content: center
+
+			h5
+				display: $display
+				text-align: center
+				margin-top: 10vw
 			//	h6
 			//		font-size: $fontSizeBig
 			//
