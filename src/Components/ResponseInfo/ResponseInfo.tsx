@@ -70,19 +70,19 @@ const ResponseInfo: React.FunctionComponent<ResponseInfoProps> = ({
               <Avatar alt={`Avatar}`} src={item.flag} />
             </ListItemAvatar>
             <ListItemText
-              className={(fontSize && "bigFontSize") || "normalFontSize"}
+              className={(fontSize && "big_font_size") || "normal_font_size"}
               primary={item.name}
               secondary={
                 (locale === "En" && "Name country") || "Название страны"
               }
             />
             <ListItemText
-              className={(fontSize && "bigFontSize") || "normalFontSize"}
+              className={(fontSize && "big_font_size") || "normal_font_size"}
               primary={`${item.alpha2Code} ${item.alpha3Code}`}
               secondary={(locale === "En" && "Country codes") || "Коды страны"}
             />
             <ListItemText
-              className={(fontSize && "bigFontSize") || "normalFontSize"}
+              className={(fontSize && "big_font_size") || "normal_font_size"}
               primary={item.currencies[0].code}
               secondary={
                 (locale === "En" && "Country currency") || "Валюта страны"
@@ -91,8 +91,8 @@ const ResponseInfo: React.FunctionComponent<ResponseInfoProps> = ({
           </ListItem>
         ))) || (
         <Typography
-          variant={"h5"}
-          className={(fontSize && "bigFontSize") || "normalFontSize"}
+          variant={"h4"}
+          className={(fontSize && "big_font_size") || "normal_font_size"}
         >
           {(locale === "En" && arrayClues[currentRequestId][0]) ||
             arrayClues[currentRequestId][1]}

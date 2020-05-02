@@ -35,16 +35,17 @@ const CardRequest: React.FunctionComponent<CardRequestProps> = ({
             dispatch(setCurrentRequestIdInStore(id)) &&
             dispatch(setInfoAboutCountriesInStore([]))
           }
+          className={(fontSize && "big_font_size") || "normal_font_size"}
         >
           <Typography
             variant="button"
-            className={(fontSize && "bigFontSize") || "normalFontSize"}
+            // className={(fontSize && "big_font_size") || "normal_font_size"}
           >
             {(locale === "En" && "Name request:") || "Имя запроса:"}
           </Typography>
           <Typography
-            variant="h6"
-            className={(fontSize && "bigFontSize") || "normalFontSize"}
+            variant="h4"
+            // className={(fontSize && "big_font_size") || "normal_font_size"}
           >
             {item}
           </Typography>

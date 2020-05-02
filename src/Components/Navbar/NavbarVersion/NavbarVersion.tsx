@@ -50,7 +50,7 @@ const NavbarVersion: React.FunctionComponent<NavbarVersionProps> = ({
       <FormControl className={"header__version__container__Language"}>
         <Select
           className={`${classes.select} ${
-            (fontSize && "bigFontSize") || "normalFontSize"
+            (fontSize && "big_font_size") || "normal_font_size"
           }`}
           inputProps={{
             classes: {
@@ -61,13 +61,13 @@ const NavbarVersion: React.FunctionComponent<NavbarVersionProps> = ({
           onChange={(e) => handleChange(e)}
         >
           <MenuItem
-            className={(fontSize && "bigFontSize") || "normalFontSize"}
+            className={(fontSize && "big_font_size") || "normal_font_size"}
             value={"En"}
           >
             En
           </MenuItem>
           <MenuItem
-            className={(fontSize && "bigFontSize") || "normalFontSize"}
+            className={(fontSize && "big_font_size") || "normal_font_size"}
             value={"Ru"}
           >
             Ru

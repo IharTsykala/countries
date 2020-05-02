@@ -9,7 +9,7 @@ $minWidthListRequest: 300px
 $amountBlocksInListRequests: 6
 $heightDividerInListRequests: 1vh
 $gapHeader: 50vw
-$fontSizeApp: 1.2rem
+$fontSizeApp: 2rem
 $fontSizeBig: $fontSizeApp * 1.5
 
 //=linear-gradient($deg, $rbc21, $rbc2, $rbc3)
@@ -34,15 +34,45 @@ body
 	margin: 0
 	padding: 0
 
+	//@media (max-width: 640px)
+//normal_font_size
+.normal_font_size
+	font-size: $fontSizeApp!important
 
-.bigFontSize
+.normal_font_size div
+	font-size: $fontSizeApp*1.5!important
+
+.normal_font_size span
+	font-size:  $fontSizeApp
+
+.normal_font_size p
+	font-size:  $fontSizeApp * 5 / 6
+
+h4.normal_font_size
+	font-size: $fontSizeApp*1.2!important
+
+.normal_font_size h4
+	font-size: $fontSizeApp*1.2!important
+
+
+//big_font_size
+.big_font_size
 	font-size: $fontSizeBig!important
 
-.bigFontSize span
-	font-size:  $fontSizeBig * 2 / 3
+.big_font_size span
+	font-size:  $fontSizeBig
 
-.bigFontSize p
+.big_font_size p
 	font-size: $fontSizeBig * 2 / 3
+
+h4.big_font_size
+	font-size: $fontSizeBig
+
+.big_font_size h4
+	font-size: $fontSizeBig*1.2!important
+
+.big_font_size div
+ font-size: $fontSizeBig*1.5!important
 
 .wrapper
 	position: relative
@@ -73,7 +103,7 @@ body
 			top: 5vw
 
 	   //h6.bigSize
-			//@extend %bigFontSize
+			//@extend %big_font_size
 
 
 		.modal__window__container__info
@@ -105,7 +135,7 @@ body
 			background: $backgroundApp
 			height: $heightHeader / 3
 			padding-left: $widthListRequests / 15
-			width: $widthListRequests / 2
+			width: $widthListRequests * 3 / 4
 			border-radius: 10vw
 
 		.header__version__container
@@ -144,7 +174,7 @@ body
 				display: $display
 				justify-content: center
 
-			h5
+			h4
 				display: $display
 				text-align: center
 				margin-top: 10vw

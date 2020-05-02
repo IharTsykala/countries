@@ -38,23 +38,23 @@ const NavbarRequests: React.FunctionComponent<NavbarRequestsProps> = ({
   const handlerDispatchRequest = (e?: React.KeyboardEvent<any>) => {
     if (!e || e.key === "Enter") {
       switch (currentRequestId) {
-      case 1:
-        dispatch(getInfoCountryByShortName(inputValue))
-        break
-      case 2:
-        dispatch(getInfoCountryByFullName(inputValue))
-        break
+        case 1:
+          dispatch(getInfoCountryByShortName(inputValue))
+          break
+        case 2:
+          dispatch(getInfoCountryByFullName(inputValue))
+          break
         // case 3:
         //   dispatch(getInfoCountryBySomeCodes(inputValue))
         //   break
-      case 3:
-        dispatch(getInfoCountryByCode(inputValue))
-        break
-      case 4:
-        dispatch(getInfoCountryByCurrency(inputValue))
-        break
-      default:
-        return
+        case 3:
+          dispatch(getInfoCountryByCode(inputValue))
+          break
+        case 4:
+          dispatch(getInfoCountryByCurrency(inputValue))
+          break
+        default:
+          return
       }
       dispatch(setInputValueInReducer(""))
     }
@@ -75,7 +75,7 @@ const NavbarRequests: React.FunctionComponent<NavbarRequestsProps> = ({
           "Введите данные"
         }
         className={`header__request__container__input ${
-          (fontSize && "bigFontSize") || "normalFontSize"
+          (fontSize && "big_font_size") || "normal_font_size"
         }`}
         disabled={(!currentRequestId && true) || false}
         onInput={(e) => handlerInputSearchBox(e)}

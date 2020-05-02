@@ -27,9 +27,9 @@ const ModalWindow: React.FunctionComponent<ModalWindowProps> = ({
           onClick={(e) => dispatch(setModalValueInReducer(false))}
         >
           <Typography
-            variant="h6"
+            variant="h4"
             className={`modal__window__close_text ${
-              (fontSize && "bigFontSize") || "normalFontSize"
+              (fontSize && "big_font_size") || "normal_font_size"
             }`}
           >
             {(locale === "En" && "Click here to close the modal window") ||
@@ -41,7 +41,9 @@ const ModalWindow: React.FunctionComponent<ModalWindowProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             <pre>
-              <code className={(fontSize && "bigFontSize") || "normalFontSize"}>
+              <code
+                className={(fontSize && "big_font_size") || "normal_font_size"}
+              >
                 {JSON.stringify(countryForModalWindow, null, 2)}
               </code>
             </pre>
