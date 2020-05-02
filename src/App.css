@@ -22,49 +22,124 @@ body {
 .normal_font_size {
   font-size: 2rem !important;
 }
+@media (max-width: 2560px) {
+  .normal_font_size {
+    font-size: 1.8181818182rem !important;
+  }
+}
+@media (max-width: 2560px) and (max-width: 1920px) {
+  .normal_font_size {
+    font-size: 1.5384615385rem !important;
+  }
+}
 
 .normal_font_size div {
   font-size: 3rem !important;
+}
+@media (max-width: 2560px) {
+  .normal_font_size div {
+    font-size: 2.6rem !important;
+  }
+}
+@media (max-width: 1920px) {
+  .normal_font_size div {
+    font-size: 2.2rem !important;
+  }
 }
 
 .normal_font_size span {
   font-size: 2rem;
 }
+@media (max-width: 1920px) {
+  .normal_font_size span {
+    font-size: 1.5384615385rem;
+  }
+}
 
 .normal_font_size p {
-  font-size: 1.6666666667rem;
+  font-size: 1.8181818182rem;
+}
+@media (max-width: 1920px) {
+  .normal_font_size p {
+    font-size: 1.5384615385rem;
+  }
 }
 
 h4.normal_font_size {
   font-size: 2.4rem !important;
 }
+@media (max-width: 1920px) {
+  h4.normal_font_size {
+    font-size: 2rem !important;
+  }
+}
 
 .normal_font_size h4 {
   font-size: 2.4rem !important;
+}
+@media (max-width: 1920px) {
+  .normal_font_size h4 {
+    font-size: 2rem !important;
+  }
 }
 
 .big_font_size {
   font-size: 3rem !important;
 }
+@media (max-width: 2560px) {
+  .big_font_size {
+    font-size: 2.7272727273rem !important;
+  }
+}
+@media (max-width: 2560px) and (max-width: 1920px) {
+  .big_font_size {
+    font-size: 2rem !important;
+  }
+}
 
 .big_font_size div {
   font-size: 4.5rem !important;
+}
+@media (max-width: 1920px) {
+  .big_font_size div {
+    font-size: 3rem !important;
+  }
 }
 
 .big_font_size span {
   font-size: 3rem;
 }
+@media (max-width: 1920px) {
+  .big_font_size span {
+    font-size: 2.1428571429rem;
+  }
+}
 
 .big_font_size p {
-  font-size: 2rem;
+  font-size: 2.3076923077rem;
+}
+@media (max-width: 1920px) {
+  .big_font_size p {
+    font-size: 2rem;
+  }
 }
 
 h4.big_font_size {
   font-size: 3.6rem !important;
 }
+@media (max-width: 1920px) {
+  h4.big_font_size {
+    font-size: 3rem !important;
+  }
+}
 
 .big_font_size h4 {
   font-size: 3.6rem !important;
+}
+@media (max-width: 1920px) {
+  .big_font_size h4 {
+    font-size: 3rem !important;
+  }
 }
 
 .wrapper {
@@ -93,6 +168,11 @@ h4.big_font_size {
   top: 5vw;
   right: 20vw;
   left: 35vw;
+}
+@media (max-width: 2560px) {
+  .wrapper .modal__window__container .modal__window__close_text {
+    text-align: center;
+  }
 }
 .wrapper .modal__window__container .modal__window__container__info {
   position: absolute;
