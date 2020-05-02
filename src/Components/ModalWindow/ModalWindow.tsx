@@ -1,6 +1,5 @@
 import React from "react"
-import { Box } from "@material-ui/core"
-import ZoomInIcon from "@material-ui/icons/ZoomIn"
+import { Box, Typography } from "@material-ui/core"
 import { setModalValueInReducer } from "../../Redux/store/Modal/Modal.action"
 import { connect } from "react-redux"
 
@@ -21,10 +20,23 @@ const ModalWindow: React.FunctionComponent<ModalWindowProps> = ({
     <>
       {modalValue && (
         <Box
-          className={"modal__window"}
+          component={"div"}
+          className={"modal__window__container"}
           onClick={(e) => dispatch(setModalValueInReducer(false))}
         >
-          <Box>{JSON.stringify(countryForModalWindow, null, 2)}</Box>
+          <Typography variant="h6" className={"modal__window__close_text"}>
+            {(locale === "En" && "Click here to close the modal window") ||
+              "Кликните здесь что бы закрыть модальное окно"}
+          </Typography>
+          <Box
+            component={"div"}
+            className={"modal__window__container__info"}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <pre>
+              <code>{JSON.stringify(countryForModalWindow, null, 4)}</code>
+            </pre>
+          </Box>
         </Box>
       )}
     </>

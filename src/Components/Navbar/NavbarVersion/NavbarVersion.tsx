@@ -10,6 +10,7 @@ import useStyles from "../NavbarMakeStyles"
 import ZoomInIcon from "@material-ui/icons/ZoomIn"
 import { setLocaleInReducer } from "../../../Redux/store/Locale/Locale.action"
 import { connect } from "react-redux"
+import Cookies from "js-cookie"
 
 type NavbarVersionProps = {
   locale: string,
@@ -35,7 +36,12 @@ const NavbarVersion: React.FunctionComponent<NavbarVersionProps> = ({
   return (
     <Toolbar className={"header__version__container"}>
       <Button variant="contained" color="primary">
-        <ZoomInIcon className={"header__version__container__view"} />
+        <ZoomInIcon
+          className={"header__version__container__view"}
+          onClick={() => {
+            console.log(Cookies.get("https://restcountries.eu/rest/v2/all"))
+          }}
+        />
       </Button>
       <FormControl className={"header__version__container__Language"}>
         <Select

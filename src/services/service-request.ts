@@ -1,10 +1,21 @@
+import Cookies from "js-cookie"
 const axios = require("axios")
 
 export default class ServiceRequest {
   static getInfoAboutAllCountries = async () => {
     try {
-      const request = await axios.get("https://restcountries.eu/rest/v2/all")
-      return request.data
+      if (localStorage.getItem("https://restcountries.eu/rest/v2/all"))
+        return JSON.parse(
+          localStorage.getItem("https://restcountries.eu/rest/v2/all") || "[]"
+        )
+      else {
+        const request = await axios.get("https://restcountries.eu/rest/v2/all")
+        localStorage.setItem(
+          "https://restcountries.eu/rest/v2/all",
+          JSON.stringify(request.data)
+        )
+        return request.data
+      }
     } catch (e) {
       console.log(e)
     }
@@ -12,10 +23,22 @@ export default class ServiceRequest {
 
   static getInfoCountryByShortName = async (name: string) => {
     try {
-      const request = await axios.get(
-        `https://restcountries.eu/rest/v2/name/${name}`
-      )
-      return request.data
+      if (localStorage.getItem(`https://restcountries.eu/rest/v2/name/${name}`))
+        return JSON.parse(
+          localStorage.getItem(
+            `https://restcountries.eu/rest/v2/name/${name}`
+          ) || "[]"
+        )
+      else {
+        const request = await axios.get(
+          `https://restcountries.eu/rest/v2/name/${name}`
+        )
+        localStorage.setItem(
+          `https://restcountries.eu/rest/v2/name/${name}`,
+          JSON.stringify(request.data)
+        )
+        return request.data
+      }
     } catch (e) {
       console.log(e)
     }
@@ -23,10 +46,26 @@ export default class ServiceRequest {
 
   static getInfoCountryByFullName = async (name: string) => {
     try {
-      const request = await axios.get(
-        `https://restcountries.eu/rest/v2/name/${name}?fullText=true`
+      if (
+        localStorage.getItem(
+          `https://restcountries.eu/rest/v2/name/${name}?fullText=true`
+        )
       )
-      return request.data
+        return JSON.parse(
+          localStorage.getItem(
+            `https://restcountries.eu/rest/v2/name/${name}?fullText=true`
+          ) || "[]"
+        )
+      else {
+        const request = await axios.get(
+          `https://restcountries.eu/rest/v2/name/${name}?fullText=true`
+        )
+        localStorage.setItem(
+          `https://restcountries.eu/rest/v2/name/${name}?fullText=true`,
+          JSON.stringify(request.data)
+        )
+        return request.data
+      }
     } catch (e) {
       console.log(e)
     }
@@ -46,10 +85,24 @@ export default class ServiceRequest {
 
   static getInfoCountryByCode = async (code: string) => {
     try {
-      const request = await axios.get(
-        `https://restcountries.eu/rest/v2/alpha/${code}`
+      if (
+        localStorage.getItem(`https://restcountries.eu/rest/v2/alpha/${code}`)
       )
-      return request.data
+        return JSON.parse(
+          localStorage.getItem(
+            `https://restcountries.eu/rest/v2/alpha/${code}`
+          ) || "[]"
+        )
+      else {
+        const request = await axios.get(
+          `https://restcountries.eu/rest/v2/alpha/${code}`
+        )
+        localStorage.setItem(
+          `https://restcountries.eu/rest/v2/alpha/${code}`,
+          JSON.stringify(request.data)
+        )
+        return request.data
+      }
     } catch (e) {
       console.log(e)
     }
@@ -57,10 +110,26 @@ export default class ServiceRequest {
 
   static getInfoCountryByCurrency = async (currency: string) => {
     try {
-      const request = await axios.get(
-        `https://restcountries.eu/rest/v2/currency/${currency}`
+      if (
+        localStorage.getItem(
+          `https://restcountries.eu/rest/v2/currency/${currency}`
+        )
       )
-      return request.data
+        return JSON.parse(
+          localStorage.getItem(
+            `https://restcountries.eu/rest/v2/currency/${currency}`
+          ) || "[]"
+        )
+      else {
+        const request = await axios.get(
+          `https://restcountries.eu/rest/v2/currency/${currency}`
+        )
+        localStorage.setItem(
+          `https://restcountries.eu/rest/v2/currency/${currency}`,
+          JSON.stringify(request.data)
+        )
+        return request.data
+      }
     } catch (e) {
       console.log(e)
     }

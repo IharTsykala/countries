@@ -60,9 +60,9 @@ const ResponseInfo: React.FunctionComponent<ResponseInfoProps> = ({
                 className={"response__info__container__item"}
               >
                 <Typography variant="subtitle1">
-                  {`Name country: ${item.name.toUpperCase()};
-                   Country codes: ${item.alpha2Code} ${item.alpha3Code};
-                   Country currency: ${item.currencies[0].code}`}
+                  {`${item.name.toUpperCase()};
+                   ${item.alpha2Code} ${item.alpha3Code};
+                   ${item.currencies[0].code}`}
                 </Typography>
               </ListItem>
             )) || (
@@ -80,14 +80,23 @@ const ResponseInfo: React.FunctionComponent<ResponseInfoProps> = ({
                 <ListItemAvatar>
                   <Avatar alt={`Avatar}`} src={item.flag} />
                 </ListItemAvatar>
-                <ListItemText primary={item.name} secondary={`Name country`} />
+                <ListItemText
+                  primary={item.name}
+                  secondary={
+                    (locale === "En" && "Name country") || "Название страны"
+                  }
+                />
                 <ListItemText
                   primary={`${item.alpha2Code} ${item.alpha3Code}`}
-                  secondary={`Country codes`}
+                  secondary={
+                    (locale === "En" && "Country codes") || "Коды страны"
+                  }
                 />
                 <ListItemText
                   primary={item.currencies[0].code}
-                  secondary={`Country currency`}
+                  secondary={
+                    (locale === "En" && "Country currency") || "Валюта страны"
+                  }
                 />
               </ListItem>
             )
