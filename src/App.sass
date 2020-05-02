@@ -59,6 +59,9 @@ h4.normal_font_size
 .big_font_size
 	font-size: $fontSizeBig!important
 
+.big_font_size div
+	font-size: $fontSizeBig*1.5!important
+
 .big_font_size span
 	font-size:  $fontSizeBig
 
@@ -66,13 +69,10 @@ h4.normal_font_size
 	font-size: $fontSizeBig * 2 / 3
 
 h4.big_font_size
-	font-size: $fontSizeBig
+	font-size: $fontSizeBig*1.2!important
 
 .big_font_size h4
 	font-size: $fontSizeBig*1.2!important
-
-.big_font_size div
- font-size: $fontSizeBig*1.5!important
 
 .wrapper
 	position: relative
@@ -83,7 +83,6 @@ h4.big_font_size
 	max-height: $heightApp
 	display: $display
 	grid-template-rows: $heightHeader 1fr
-	//font-size: $fontSizeApp
 
 	.modal__window__container
 		position: absolute
@@ -98,20 +97,16 @@ h4.big_font_size
 		.modal__window__close_text
 			position: absolute
 			color: white
-			left: 40vw
-			right: 20vw
 			top: 5vw
-
-	   //h6.bigSize
-			//@extend %big_font_size
-
+			right: 20vw
+			left: 35vw
 
 		.modal__window__container__info
 			position: absolute
 			width: 50vw
 			height: 50vh
-			right: 20vw
 			top: 15vw
+			right: 20vw
 			z-index: 20000
 			background: $backgroundApp
 			overflow: auto
@@ -178,13 +173,3 @@ h4.big_font_size
 				display: $display
 				text-align: center
 				margin-top: 10vw
-			//	h6
-			//		font-size: $fontSizeBig
-			//
-			//.response__info__container__item
-				//span
-				//	font-size: $fontSizeBig
-				//p
-				//	font-size: $fontSizeBig]
-
-
