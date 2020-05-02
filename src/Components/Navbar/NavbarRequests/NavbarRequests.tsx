@@ -14,6 +14,7 @@ import { connect } from "react-redux"
 
 type NavbarRequestsProps = {
   locale: string,
+  fontSize: boolean,
   currentRequestId: number,
   inputValue: string,
   dispatch: any,
@@ -21,14 +22,14 @@ type NavbarRequestsProps = {
 
 const NavbarRequests: React.FunctionComponent<NavbarRequestsProps> = ({
   locale,
+  fontSize,
   currentRequestId,
   inputValue,
   dispatch,
 }) => {
   useEffect(() => {
     if (!currentRequestId) dispatch(getInfoAboutAllCountries())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentRequestId === 0, dispatch])
+  }, [currentRequestId, dispatch])
 
   const handlerInputSearchBox = (e: React.ChangeEvent<any>) => {
     dispatch(setInputValueInReducer(e.target.value))
@@ -73,7 +74,9 @@ const NavbarRequests: React.FunctionComponent<NavbarRequestsProps> = ({
           (locale === "En" && "Input data") ||
           "Введите данные"
         }
-        className={"header__request__container__input"}
+        className={`header__request__container__input ${
+          (fontSize && "bigFontSize") || "normalFontSize"
+        }`}
         disabled={(!currentRequestId && true) || false}
         onInput={(e) => handlerInputSearchBox(e)}
         onKeyPress={(e) => handlerDispatchRequest(e)}
@@ -84,6 +87,7 @@ const NavbarRequests: React.FunctionComponent<NavbarRequestsProps> = ({
 
 const mapStateToProps = (state: any) => ({
   locale: state.locale.locale,
+  fontSize: state.styles.fontSize,
   currentRequestId: state.request.currentRequestId,
   inputValue: state.input.inputValue,
 })

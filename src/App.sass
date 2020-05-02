@@ -9,9 +9,12 @@ $minWidthListRequest: 300px
 $amountBlocksInListRequests: 6
 $heightDividerInListRequests: 1vh
 $gapHeader: 50vw
+$fontSizeApp: 1.5rem
+$fontSizeBig: $fontSizeApp * 2
 
 //=linear-gradient($deg, $rbc21, $rbc2, $rbc3)
 //	background: linear-gradient($deg, $rbc21, $rbc2, $rbc3)
+
 
 %blocksInListRequests
 	height: (($heightApp - $heightHeader) / $amountBlocksInListRequests) - $heightDividerInListRequests
@@ -31,6 +34,10 @@ body
 	margin: 0
 	padding: 0
 
+
+.bigFontSize
+	font-size: $fontSizeBig!important
+
 .wrapper
 	position: relative
 	background: $backgroundApp
@@ -40,6 +47,7 @@ body
 	max-height: $heightApp
 	display: $display
 	grid-template-rows: $heightHeader 1fr
+	font-size: $fontSizeApp
 
 	.modal__window__container
 		position: absolute
@@ -57,6 +65,10 @@ body
 			left: 40vw
 			right: 20vw
 			top: 5vw
+
+	   //h6.bigSize
+			//@extend %bigFontSize
+
 
 		.modal__window__container__info
 			position: absolute
@@ -115,6 +127,7 @@ body
 
 				button
 					@extend %blocksInListRequests
+					display: $display
 
 		.response__info__container
 			max-height: $heightApp - $heightHeader
@@ -124,3 +137,13 @@ body
 			li
 				display: $display
 				justify-content: center
+			//	h6
+			//		font-size: $fontSizeBig
+			//
+			//.response__info__container__item
+				//span
+				//	font-size: $fontSizeBig
+				//p
+				//	font-size: $fontSizeBig]
+
+

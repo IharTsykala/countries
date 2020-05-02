@@ -14,12 +14,14 @@ const arrayRequests = [
 
 type ListRequestsProps = {
   locale: string,
+  fontSize: boolean,
   currentRequestId: number,
   dispatch: any,
 }
 
 const ListRequests: React.FunctionComponent<ListRequestsProps> = ({
   locale,
+  fontSize,
   currentRequestId,
   dispatch,
 }) => {
@@ -34,6 +36,7 @@ const ListRequests: React.FunctionComponent<ListRequestsProps> = ({
             locale={locale}
             id={index}
             currentRequest={index === currentRequestId}
+            fontSize={fontSize}
           />
         ))}
       </List>
@@ -43,6 +46,7 @@ const ListRequests: React.FunctionComponent<ListRequestsProps> = ({
 
 const mapStateToProps = (state: any) => ({
   locale: state.locale.locale,
+  fontSize: state.styles.fontSize,
   currentRequestId: state.request.currentRequestId,
 })
 

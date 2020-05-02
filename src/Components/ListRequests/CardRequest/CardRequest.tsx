@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import ListItem from "@material-ui/core/ListItem"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
@@ -14,6 +14,7 @@ type CardRequestProps = {
   locale: string,
   id: number,
   currentRequest: boolean,
+  fontSize: boolean,
 }
 
 const CardRequest: React.FunctionComponent<CardRequestProps> = ({
@@ -22,8 +23,8 @@ const CardRequest: React.FunctionComponent<CardRequestProps> = ({
   locale,
   id,
   currentRequest,
+  fontSize,
 }) => {
-  useEffect(() => {}, [])
   return (
     <>
       <ListItem className={`card_request__container`}>
@@ -35,10 +36,18 @@ const CardRequest: React.FunctionComponent<CardRequestProps> = ({
             dispatch(setInfoAboutCountriesInStore([]))
           }
         >
-          <Typography variant="button">
-            {(locale === "En" && "Name request:") || "Имя запроса:"} {item}
+          <Typography
+            variant="button"
+            className={(fontSize && "bigFontSize") || "normalFontSize"}
+          >
+            {(locale === "En" && "Name request:") || "Имя запроса:"}
           </Typography>
-          {/*<Typography variant="h6">{item}</Typography>*/}
+          <Typography
+            variant="h6"
+            className={(fontSize && "bigFontSize") || "normalFontSize"}
+          >
+            {item}
+          </Typography>
         </Button>
       </ListItem>
       <Divider variant="inset" component="li" />

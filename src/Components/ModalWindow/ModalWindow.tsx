@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 
 type ModalWindowProps = {
   locale: string,
+  fontSize: boolean,
   modalValue: boolean,
   countryForModalWindow: {},
   dispatch: any,
@@ -12,6 +13,7 @@ type ModalWindowProps = {
 
 const ModalWindow: React.FunctionComponent<ModalWindowProps> = ({
   locale,
+  fontSize,
   modalValue,
   countryForModalWindow,
   dispatch,
@@ -21,10 +23,15 @@ const ModalWindow: React.FunctionComponent<ModalWindowProps> = ({
       {modalValue && (
         <Box
           component={"div"}
-          className={"modal__window__container"}
+          className={`modal__window__container`}
           onClick={(e) => dispatch(setModalValueInReducer(false))}
         >
-          <Typography variant="h6" className={"modal__window__close_text"}>
+          <Typography
+            variant="h6"
+            className={`modal__window__close_text ${
+              (fontSize && "bigFontSize") || "normalFontSize"
+            }`}
+          >
             {(locale === "En" && "Click here to close the modal window") ||
               "Кликните здесь что бы закрыть модальное окно"}
           </Typography>
@@ -34,7 +41,9 @@ const ModalWindow: React.FunctionComponent<ModalWindowProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             <pre>
-              <code>{JSON.stringify(countryForModalWindow, null, 4)}</code>
+              <code className={(fontSize && "bigFontSize") || "normalFontSize"}>
+                {JSON.stringify(countryForModalWindow, null, 2)}
+              </code>
             </pre>
           </Box>
         </Box>
@@ -45,6 +54,7 @@ const ModalWindow: React.FunctionComponent<ModalWindowProps> = ({
 
 const mapStateToProps = (state: any) => ({
   locale: state.locale.locale,
+  fontSize: state.styles.fontSize,
   modalValue: state.modal.modalValue,
   countryForModalWindow: state.request.countryForModalWindow,
 })

@@ -21,7 +21,6 @@ function* getInfoCountryByShortNameSaga(actions: any) {
     const listCountries = yield ServiceRequest.getInfoCountryByShortName(
       actions.payload
     )
-    console.log(listCountries)
     yield put(setInfoAboutCountriesInStore(listCountries))
   } catch (e) {
     yield put(getFailureAction(e))
