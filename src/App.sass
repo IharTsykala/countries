@@ -90,6 +90,8 @@ body
 		font-size: $fontSizeApp / 2.1
 	@media (max-width: 814px)
 		font-size: $fontSizeApp / 2.4
+	@media (max-height: 400px)
+		font-size: $fontSizeApp / 2.6
 
 h4.normal_font_size
 	font-size: $fontSizeApp * 1.2!important
@@ -116,6 +118,8 @@ h4.normal_font_size
 		font-size: $fontSizeApp / 1.6!important
 	@media (max-width: 814px)
 		font-size: $fontSizeApp / 1.8!important
+	@media (max-height: 400px)
+		font-size: $fontSizeApp / 2.0!important
 
 
 //big_font_size
@@ -208,6 +212,13 @@ h4.big_font_size
 	max-height: $heightApp
 	display: $display
 	grid-template-rows: $heightHeader 1fr
+	@media (max-height: 600px)
+		grid-template-rows: $heightHeader*1.4 1fr
+		overflow-x: hidden
+	@media (max-height: 450px)
+		grid-template-rows: $heightHeader*1.5 1fr
+	@media (max-height: 400px)
+		grid-template-rows: $heightHeader*1.8 1fr
 
 	.modal__window__container
 		position: absolute
@@ -283,7 +294,7 @@ h4.big_font_size
 			width: $widthListRequests * 3 / 4
 			border-radius: 10vw
 			@media (max-width: 2560px)
-				height: $heightHeader / 2
+				height: $heightHeader / 1.5
 			@media (max-width: 1024px)
 				width: $widthListRequests
 
@@ -299,6 +310,8 @@ h4.big_font_size
 	.main
 		display: $display
 		grid-template-columns: $widthListRequests 1fr
+		margin: 0!important
+		overflow-y: hidden
 		@media (max-width: 560px)
 			grid-template-columns: 1fr
 			grid-template-rows: repeat(2, 1fr)
