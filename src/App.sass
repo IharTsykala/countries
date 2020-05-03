@@ -6,7 +6,7 @@ $minHeightHeader: 60px
 $widthListRequests: 30vw
 $display: grid!important
 $minWidthListRequest: 300px
-$amountBlocksInListRequests: 6
+$amountBlocksInListRequests: 5
 $heightDividerInListRequests: 1vh
 $gapHeader: 50vw
 $fontSizeApp: 2rem
@@ -277,6 +277,9 @@ h4.big_font_size
 		@media (max-width: 814px)
 			gap: $gapHeader - 30vw
 			grid-template-columns: $widthListRequests * 1.5 1fr
+		@media (max-width: 560px)
+			gap: 0
+			grid-template-columns: $widthListRequests * 2 1fr
 
 		.header__request__container__search_icon
 			@extend %icon
@@ -284,6 +287,8 @@ h4.big_font_size
 			@media (max-width: 2560px)
 				height: $heightHeader / 2
 				width: $heightHeader / 2
+			@media (max-width: 560px)
+				display: none
 			&:hover
 				color: rgba(0, 7, 117, 0.95)
 
@@ -297,6 +302,8 @@ h4.big_font_size
 				height: $heightHeader / 1.5
 			@media (max-width: 1024px)
 				width: $widthListRequests
+			@media (max-width: 560px)
+				width: 100%
 
 		.header__version__container
 			display: $display
@@ -326,17 +333,24 @@ h4.big_font_size
 				min-width: $minWidthListRequest - 150px
 			@media (max-width: 560px)
 				border-right: none
+				border-bottom: 1px solid #1d56fd
 
 			.card_request__container
 				@extend %blocksInListRequests
 				@media (max-width: 1024px)
 					min-width: $minWidthListRequest - 150px
+				@media (max-width: 560px)
+					min-width: 100%
+				@media (max-height: 600px)
+					height: (($heightApp - $heightHeader) / 6) - $heightDividerInListRequests
 
 				button
 					@extend %blocksInListRequests
 					display: $display
 					@media (max-width: 1024px)
 						min-width: $minWidthListRequest - 150px
+					@media (max-width: 560px)
+						min-width: 100%
 
 		.response__info__container
 			max-height: $heightApp - $heightHeader

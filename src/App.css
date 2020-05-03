@@ -1,5 +1,5 @@
 .wrapper .main .list_request__container .card_request__container button, .wrapper .main .list_request__container .card_request__container {
-  height: 14vh;
+  height: 17vh;
   margin: 0 !important;
   padding: 0 !important;
   width: 30vw;
@@ -496,6 +496,12 @@ h4.big_font_size {
     grid-template-columns: 45vw 1fr;
   }
 }
+@media (max-width: 560px) {
+  .wrapper .header {
+    gap: 0;
+    grid-template-columns: 60vw 1fr;
+  }
+}
 .wrapper .header .header__request__container__search_icon {
   margin-left: 3vw;
 }
@@ -503,6 +509,11 @@ h4.big_font_size {
   .wrapper .header .header__request__container__search_icon {
     height: 5vh;
     width: 5vh;
+  }
+}
+@media (max-width: 560px) {
+  .wrapper .header .header__request__container__search_icon {
+    display: none;
   }
 }
 .wrapper .header .header__request__container__search_icon:hover {
@@ -523,6 +534,11 @@ h4.big_font_size {
 @media (max-width: 1024px) {
   .wrapper .header .header__request__container__input {
     width: 30vw;
+  }
+}
+@media (max-width: 560px) {
+  .wrapper .header .header__request__container__input {
+    width: 100%;
   }
 }
 .wrapper .header .header__version__container {
@@ -558,11 +574,22 @@ h4.big_font_size {
 @media (max-width: 560px) {
   .wrapper .main .list_request__container {
     border-right: none;
+    border-bottom: 1px solid #1d56fd;
   }
 }
 @media (max-width: 1024px) {
   .wrapper .main .list_request__container .card_request__container {
     min-width: 150px;
+  }
+}
+@media (max-width: 560px) {
+  .wrapper .main .list_request__container .card_request__container {
+    min-width: 100%;
+  }
+}
+@media (max-height: 600px) {
+  .wrapper .main .list_request__container .card_request__container {
+    height: 14vh;
   }
 }
 .wrapper .main .list_request__container .card_request__container button {
@@ -571,6 +598,11 @@ h4.big_font_size {
 @media (max-width: 1024px) {
   .wrapper .main .list_request__container .card_request__container button {
     min-width: 150px;
+  }
+}
+@media (max-width: 560px) {
+  .wrapper .main .list_request__container .card_request__container button {
+    min-width: 100%;
   }
 }
 .wrapper .main .response__info__container {
