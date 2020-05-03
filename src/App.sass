@@ -150,6 +150,8 @@ h4.big_font_size
 		font-size: $fontSizeBig!important
 	@media (max-width: 1600px)
 		font-size: $fontSizeBig / 1.2 !important
+	@media (max-width: 1280px)
+		font-size: $fontSizeBig / 1.4 !important
 
 .wrapper
 	position: relative
@@ -206,10 +208,16 @@ h4.big_font_size
 		display: $display
 		grid-template-columns: $widthListRequests 1fr
 		gap: $gapHeader
+		@media (max-width: 1024px)
+			gap: $gapHeader - 20vw
+			grid-template-columns: $widthListRequests * 1.3 1fr
 
 		.header__request__container__search_icon
 			@extend %icon
-			margin-left: $widthListRequests / 7
+			margin-left: $widthListRequests / 10
+			@media (max-width: 2560px)
+				height: $heightHeader / 2
+				width: $heightHeader / 2
 
 			&:hover
 				color: rgba(0, 7, 117, 0.95)
@@ -220,8 +228,10 @@ h4.big_font_size
 			padding-left: $widthListRequests / 15
 			width: $widthListRequests * 3 / 4
 			border-radius: 10vw
-			@media (max-width: 1280px)
+			@media (max-width: 2560px)
 				height: $heightHeader / 2
+			@media (max-width: 1024px)
+				width: $widthListRequests
 
 		.header__version__container
 			display: $display
@@ -242,13 +252,19 @@ h4.big_font_size
 			max-height: $heightApp - $heightHeader
 			overflow-y: auto
 			overflow-x: hidden
+			@media (max-width: 1024px)
+				min-width: $minWidthListRequest - 150px
 
 			.card_request__container
 				@extend %blocksInListRequests
+				@media (max-width: 1024px)
+					min-width: $minWidthListRequest - 150px
 
 				button
 					@extend %blocksInListRequests
 					display: $display
+					@media (max-width: 1024px)
+						min-width: $minWidthListRequest - 150px
 
 		.response__info__container
 			max-height: $heightApp - $heightHeader
