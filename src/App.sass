@@ -264,7 +264,6 @@ h4.big_font_size
 			@media (max-width: 800px)
 				height: 70vh
 
-
 	.header
 		position: relative
 		min-height: $minHeightHeader
@@ -356,6 +355,7 @@ h4.big_font_size
 			max-height: $heightApp - $heightHeader
 			padding: 1vw
 			overflow-y: auto
+			display: $display
 
 			li
 				display: $display
@@ -365,3 +365,7 @@ h4.big_font_size
 				display: $display
 				text-align: center
 				margin-top: 10vw
+
+			div.response__info__spinner
+				display: $display!important
+				justify-self: center

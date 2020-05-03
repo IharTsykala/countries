@@ -609,6 +609,7 @@ h4.big_font_size {
   max-height: 90vh;
   padding: 1vw;
   overflow-y: auto;
+  display: grid !important;
 }
 .wrapper .main .response__info__container li {
   display: grid !important;
@@ -618,6 +619,10 @@ h4.big_font_size {
   display: grid !important;
   text-align: center;
   margin-top: 10vw;
+}
+.wrapper .main .response__info__container div.response__info__spinner {
+  display: grid !important !important;
+  justify-self: center;
 }
 
 /*# sourceMappingURL=App.css.map */

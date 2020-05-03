@@ -8,6 +8,7 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
+  CircularProgress,
 } from "@material-ui/core"
 import { setModalValueInReducer } from "../../Redux/store/Modal/Modal.action"
 import { setCountryForModalWindow } from "../../Redux/store/Request/Request.action"
@@ -87,13 +88,21 @@ const ResponseInfo: React.FunctionComponent<ResponseInfoProps> = ({
             />
           </ListItem>
         ))) || (
-        <Typography
-          variant={"h4"}
-          className={(fontSize && "big_font_size") || "normal_font_size"}
-        >
-          {(locale === "En" && arrayClues[currentRequestId][0]) ||
-            arrayClues[currentRequestId][1]}
-        </Typography>
+        <>
+          <Typography
+            variant={"h4"}
+            className={(fontSize && "big_font_size") || "normal_font_size"}
+          >
+            {(locale === "En" && arrayClues[currentRequestId][0]) ||
+              arrayClues[currentRequestId][1]}
+          </Typography>
+          {currentRequestId === 0 && (
+            <CircularProgress
+              color="primary"
+              className={"response__info__spinner"}
+            />
+          )}
+        </>
       )}
     </List>
   )
@@ -107,16 +116,3 @@ const mapStateToProps = (state: any) => ({
 })
 
 export default connect(mapStateToProps)(ResponseInfo)
-
-// (!currentRequestId && (
-//   <ListItem
-//     key={index}
-//     className={"response__info__container__item"}
-//   >
-//     <Typography variant="subtitle1">
-//       {`${item.name.toUpperCase()};
-//                    ${item.alpha2Code} ${item.alpha3Code};
-//                    ${item.currencies[0].code}`}
-//     </Typography>
-//   </ListItem>
-// )) ||
