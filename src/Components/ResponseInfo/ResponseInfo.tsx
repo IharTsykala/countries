@@ -13,10 +13,7 @@ import { setModalValueInReducer } from "../../Redux/store/Modal/Modal.action"
 import { setCountryForModalWindow } from "../../Redux/store/Request/Request.action"
 
 const arrayClues = [
-  [
-    "Error application, these must be list all countries",
-    "Ошибка приложения, здесь должен быть список всех стран",
-  ],
+  ["Wait!", "Ожидайте!"],
   [
     "Input short name country please and press enter",
     "Введите короткое название страны и нажмите ввод пожалуйста",

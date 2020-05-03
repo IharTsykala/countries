@@ -42,6 +42,11 @@ body {
     font-size: 1.1111111111rem !important;
   }
 }
+@media (max-width: 1024px) {
+  .normal_font_size {
+    font-size: 0.9090909091rem !important;
+  }
+}
 
 .normal_font_size div {
   font-size: 3rem !important;
@@ -66,6 +71,11 @@ body {
     font-size: 1.1764705882rem !important;
   }
 }
+@media (max-width: 1024px) {
+  .normal_font_size div {
+    font-size: 0.9523809524rem !important;
+  }
+}
 
 .normal_font_size span {
   font-size: 2rem;
@@ -83,6 +93,11 @@ body {
 @media (max-width: 1280px) {
   .normal_font_size span {
     font-size: 1.1111111111rem;
+  }
+}
+@media (max-width: 1024px) {
+  .normal_font_size span {
+    font-size: 0.9523809524rem;
   }
 }
 
@@ -104,6 +119,11 @@ body {
     font-size: 1.1111111111rem;
   }
 }
+@media (max-width: 1024px) {
+  .normal_font_size p {
+    font-size: 0.9523809524rem;
+  }
+}
 
 h4.normal_font_size {
   font-size: 2.4rem !important;
@@ -123,6 +143,11 @@ h4.normal_font_size {
     font-size: 1.3333333333rem !important;
   }
 }
+@media (max-width: 1024px) {
+  h4.normal_font_size {
+    font-size: 1.1764705882rem !important;
+  }
+}
 
 .normal_font_size h4 {
   font-size: 2.4rem !important;
@@ -140,6 +165,11 @@ h4.normal_font_size {
 @media (max-width: 1280px) {
   .normal_font_size h4 {
     font-size: 1.4285714286rem !important;
+  }
+}
+@media (max-width: 1024px) {
+  .normal_font_size h4 {
+    font-size: 1.25rem !important;
   }
 }
 
@@ -166,6 +196,11 @@ h4.normal_font_size {
     font-size: 1.25rem !important;
   }
 }
+@media (max-width: 1024px) {
+  .big_font_size {
+    font-size: 1.1538461538rem !important;
+  }
+}
 
 .big_font_size div {
   font-size: 4.5rem !important;
@@ -183,6 +218,11 @@ h4.normal_font_size {
 @media (max-width: 1280px) {
   .big_font_size div {
     font-size: 1.875rem !important;
+  }
+}
+@media (max-width: 1024px) {
+  .big_font_size div {
+    font-size: 1.6666666667rem !important;
   }
 }
 
@@ -204,6 +244,11 @@ h4.normal_font_size {
     font-size: 1.4285714286rem;
   }
 }
+@media (max-width: 1024px) {
+  .big_font_size span {
+    font-size: 1.25rem;
+  }
+}
 
 .big_font_size p {
   font-size: 2.3076923077rem;
@@ -221,6 +266,11 @@ h4.normal_font_size {
 @media (max-width: 1280px) {
   .big_font_size p {
     font-size: 1.3636363636rem;
+  }
+}
+@media (max-width: 1024px) {
+  .big_font_size p {
+    font-size: 1.1538461538rem;
   }
 }
 
@@ -242,6 +292,11 @@ h4.big_font_size {
     font-size: 2rem !important;
   }
 }
+@media (max-width: 1024px) {
+  h4.big_font_size {
+    font-size: 1.7647058824rem !important;
+  }
+}
 
 .big_font_size h4 {
   font-size: 3.6rem !important;
@@ -259,6 +314,11 @@ h4.big_font_size {
 @media (max-width: 1280px) {
   .big_font_size h4 {
     font-size: 2.1428571429rem !important;
+  }
+}
+@media (max-width: 1024px) {
+  .big_font_size h4 {
+    font-size: 1.6666666667rem !important;
   }
 }
 
