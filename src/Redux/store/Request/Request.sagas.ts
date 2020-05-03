@@ -5,24 +5,33 @@ import {
   setInfoAboutCountriesInStore,
 } from "./Request.action"
 import ServiceRequest from "../../../services/service-request"
+import { LoadingState } from "../../../shared/constants/user-from-view-mode.enum"
+import { setLoadingState } from "../Loading/Loading.actions"
 
 function* getInfoAboutAllCountriesSaga() {
   try {
+    yield put(setLoadingState(LoadingState.Loading))
     const listCountries = yield ServiceRequest.getInfoAboutAllCountries()
-
     yield put(setInfoAboutCountriesInStore(listCountries))
+    yield put(setLoadingState(LoadingState.Loaded))
   } catch (e) {
+    if (e === "Not Found") yield put(setLoadingState(LoadingState.NotFound))
+    else yield put(setLoadingState(LoadingState.Error))
     yield put(getFailureAction(e))
   }
 }
 
 function* getInfoCountryByShortNameSaga(actions: any) {
   try {
+    yield put(setLoadingState(LoadingState.Loading))
     const listCountries = yield ServiceRequest.getInfoCountryByShortName(
       actions.payload
     )
     yield put(setInfoAboutCountriesInStore(listCountries))
+    yield put(setLoadingState(LoadingState.Loaded))
   } catch (e) {
+    if (e === "Not Found") yield put(setLoadingState(LoadingState.NotFound))
+    else yield put(setLoadingState(LoadingState.Error))
     yield put(getFailureAction(e))
   }
 }
@@ -33,7 +42,11 @@ function* getInfoCountryByFullNameSaga(actions: any) {
       actions.payload
     )
     yield put(setInfoAboutCountriesInStore(listCountries))
+    yield put(setLoadingState(LoadingState.Loaded))
   } catch (e) {
+    if (e.message === "Not Found")
+      yield put(setLoadingState(LoadingState.NotFound))
+    else yield put(setLoadingState(LoadingState.Error))
     yield put(getFailureAction(e))
   }
 }
@@ -51,22 +64,32 @@ function* getInfoCountryByFullNameSaga(actions: any) {
 
 function* getInfoCountryByCodeSaga(actions: any) {
   try {
+    yield put(setLoadingState(LoadingState.Loading))
     const listCountries = yield ServiceRequest.getInfoCountryByCode(
       actions.payload
     )
     yield put(setInfoAboutCountriesInStore([listCountries]))
+    yield put(setLoadingState(LoadingState.Loaded))
   } catch (e) {
+    if (e === "Not Found") yield put(setLoadingState(LoadingState.NotFound))
+    else yield put(setLoadingState(LoadingState.Error))
     yield put(getFailureAction(e))
   }
 }
 
 function* getInfoCountryByCurrencySaga(actions: any) {
   try {
+    yield put(setLoadingState(LoadingState.Loading))
     const listCountries = yield ServiceRequest.getInfoCountryByCurrency(
       actions.payload
     )
+    console.log(listCountries)
     yield put(setInfoAboutCountriesInStore(listCountries))
+    yield put(setLoadingState(LoadingState.Loaded))
   } catch (e) {
+    if (e === "Not Found") {
+      yield put(setLoadingState(LoadingState.NotFound))
+    } else yield put(setLoadingState(LoadingState.Error))
     yield put(getFailureAction(e))
   }
 }

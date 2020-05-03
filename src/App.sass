@@ -29,6 +29,11 @@ $fontSizeBig: $fontSizeApp * 1.5
 	width: $heightHeader / 3
 	cursor: pointer
 
+%loading
+	display: $display
+	text-align: center
+	margin-top: 10vw
+
 body
 	box-sizing: border-box
 	margin: 0
@@ -314,7 +319,7 @@ h4.big_font_size
 				@extend %icon
 
 	.main
-		display: $display
+		display: $display!important
 		grid-template-columns: $widthListRequests 1fr
 		margin: 0!important
 		overflow-y: hidden
@@ -362,10 +367,19 @@ h4.big_font_size
 				justify-content: center
 
 			h4
-				display: $display
-				text-align: center
-				margin-top: 10vw
+				@extend %loading
 
-			div.response__info__spinner
+			.response__info__spinner
 				display: $display!important
 				justify-self: center
+
+		.response__info__spinner
+			@extend %loading
+			display: $display!important
+			justify-self: center
+
+		.response__info__not_found
+			@extend %loading
+
+		.response__info__error
+			@extend %loading

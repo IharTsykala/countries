@@ -18,6 +18,7 @@ export default class ServiceRequest {
       }
     } catch (e) {
       console.log(e)
+      throw e.response.data.message
     }
   }
 
@@ -37,10 +38,12 @@ export default class ServiceRequest {
           `https://restcountries.eu/rest/v2/name/${name}`,
           JSON.stringify(request.data)
         )
+        console.log(request)
         return request.data
       }
     } catch (e) {
       console.log(e)
+      throw e.response.data.message
     }
   }
 
@@ -68,6 +71,7 @@ export default class ServiceRequest {
       }
     } catch (e) {
       console.log(e)
+      throw e.response.data.message
     }
   }
 
@@ -105,6 +109,7 @@ export default class ServiceRequest {
       }
     } catch (e) {
       console.log(e)
+      throw e.response.data.message
     }
   }
 
@@ -132,6 +137,7 @@ export default class ServiceRequest {
       }
     } catch (e) {
       console.log(e)
+      throw e.response.data.message
     }
   }
 }
