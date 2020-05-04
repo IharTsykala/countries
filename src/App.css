@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 
-.wrapper .main .response__info__error, .wrapper .main .response__info__not_found, .wrapper .main .response__info__spinner, .wrapper .main .response__info__container h4 {
+.wrapper .main .response__info__error, .wrapper .main .response__info__not_found, .wrapper .main .response__info__container h4 {
   display: grid !important;
   text-align: center;
   margin-top: 10vw;
@@ -554,7 +554,7 @@ h4.big_font_size {
   gap: 5vw;
 }
 .wrapper .main {
-  display: grid !important !important;
+  display: grid !important;
   grid-template-columns: 30vw 1fr;
   margin: 0 !important;
   overflow-y: hidden;
@@ -626,8 +626,8 @@ h4.big_font_size {
   justify-self: center;
 }
 .wrapper .main .response__info__spinner {
-  display: grid !important !important;
-  justify-self: center;
+  display: grid !important;
+  margin: 10vw auto;
 }
 
 /*# sourceMappingURL=App.css.map */

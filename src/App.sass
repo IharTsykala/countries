@@ -319,7 +319,7 @@ h4.big_font_size
 				@extend %icon
 
 	.main
-		display: $display!important
+		display: $display
 		grid-template-columns: $widthListRequests 1fr
 		margin: 0!important
 		overflow-y: hidden
@@ -374,12 +374,12 @@ h4.big_font_size
 				justify-self: center
 
 		.response__info__spinner
-			@extend %loading
-			display: $display!important
-			justify-self: center
+			display: $display
+			margin: 10vw auto
 
 		.response__info__not_found
 			@extend %loading
+
 
 		.response__info__error
 			@extend %loading
