@@ -61,7 +61,7 @@ const NavbarRequests: React.FunctionComponent<NavbarRequestsProps> = ({
       fontSize={fontSize}
       currentRequestId={currentRequestId}
       inputValue={inputValue}
-      handlerDispatchRequest={handlerDispatchRequest()}
+      handlerDispatchRequest={handlerDispatchRequest}
       handlerInputSearchBox={handlerInputSearchBox}
     />
   )

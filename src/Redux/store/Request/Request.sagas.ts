@@ -44,8 +44,7 @@ function* getInfoCountryByFullNameSaga(actions: any) {
     yield put(setInfoAboutCountriesInStore(listCountries))
     yield put(setLoadingState(LoadingState.Loaded))
   } catch (e) {
-    if (e.message === "Not Found")
-      yield put(setLoadingState(LoadingState.NotFound))
+    if (e === "Not Found") yield put(setLoadingState(LoadingState.NotFound))
     else yield put(setLoadingState(LoadingState.Error))
     yield put(getFailureAction(e))
   }
@@ -72,7 +71,6 @@ function* getInfoCountryByCurrencySaga(actions: any) {
     const listCountries = yield ServiceRequest.getInfoCountryByCurrency(
       actions.payload
     )
-    console.log(listCountries)
     yield put(setInfoAboutCountriesInStore(listCountries))
     yield put(setLoadingState(LoadingState.Loaded))
   } catch (e) {
