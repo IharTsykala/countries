@@ -51,17 +51,6 @@ function* getInfoCountryByFullNameSaga(actions: any) {
   }
 }
 
-// function* getInfoCountryBySomeCodesSaga(actions: any) {
-//   try {
-//     const listCountries = yield ServiceRequest.getInfoCountryBySomeCodes(
-//       actions.payload
-//     )
-//     yield put(setInfoAboutCountriesInStore(listCountries))
-//   } catch (e) {
-//     yield put(getFailureAction(e))
-//   }
-// }
-
 function* getInfoCountryByCodeSaga(actions: any) {
   try {
     yield put(setLoadingState(LoadingState.Loading))
@@ -107,10 +96,6 @@ export default function* requestSaga() {
     ActionTypes.GET_INFO_COUNTRY_BY_SHORT_FULL_NAME,
     getInfoCountryByFullNameSaga
   )
-  // yield takeEvery(
-  //   ActionTypes.GET_INFO_COUNTRY_BY_SOME_CODES,
-  //   getInfoCountryBySomeCodesSaga
-  // )
   yield takeEvery(
     ActionTypes.GET_INFO_COUNTRY_BY_CODE,
     getInfoCountryByCodeSaga

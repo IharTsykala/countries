@@ -1,4 +1,3 @@
-import Cookies from "js-cookie"
 const axios = require("axios")
 
 export default class ServiceRequest {
@@ -74,18 +73,6 @@ export default class ServiceRequest {
       throw e.response.data.message
     }
   }
-
-  // static getInfoCountryBySomeCodes = async (code: string) => {
-  //   try {
-  //     // Need make logic these or oi sagas
-  //     const request = await axios.get(
-  //       `https://restcountries.eu/rest/v2/alpha?codes=${code};${code};${code}`
-  //     )
-  //     return request.data
-  //   } catch (e) {
-  //     console.log(e)
-  //   }
-  // }
 
   static getInfoCountryByCode = async (code: string) => {
     try {

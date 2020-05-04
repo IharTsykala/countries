@@ -1,5 +1,5 @@
 import React from "react"
-import { Toolbar, Button } from "@material-ui/core"
+import { Toolbar } from "@material-ui/core"
 import { connect } from "react-redux"
 import NavbarVersionLanguage from "./NavbarVersionLanguage/NavbarVersionLanguage"
 import NavbarVersionZoom from "./NavbarVersionZoom/NavbarVersionZoom"

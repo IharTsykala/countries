@@ -13,7 +13,7 @@ export const ActionTypes = {
   SET_INFO_ABOUT_CONTRIES_IN_STORE:
     "[Request] Set info about countries in store",
 
-  SET_COUNTRY_FOR_MODAL_WINDOW: '[Request] Set country for modal window',
+  SET_COUNTRY_FOR_MODAL_WINDOW: "[Request] Set country for modal window",
 
   GET_FAILURE: "[getFailure] Get failure",
 }
@@ -40,13 +40,6 @@ export const getInfoCountryByFullName = (name: string): Action<string> => ({
   payload: name,
 })
 
-// export const getInfoCountryBySomeCodes = (
-//   someCodes: string
-// ): Action<string> => ({
-//   type: ActionTypes.GET_INFO_COUNTRY_BY_SOME_CODES,
-//   payload: someCodes,
-// })
-
 export const getInfoCountryByCode = (code: string): Action<string> => ({
   type: ActionTypes.GET_INFO_COUNTRY_BY_CODE,
   payload: code,
@@ -66,9 +59,7 @@ export const setInfoAboutCountriesInStore = (
 
 //ModalWindow
 
-export const setCountryForModalWindow = (
-    country: {}
-): Action<{}> => ({
+export const setCountryForModalWindow = (country: {}): Action<{}> => ({
   type: ActionTypes.SET_COUNTRY_FOR_MODAL_WINDOW,
   payload: country,
 })
