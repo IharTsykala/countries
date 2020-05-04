@@ -9,7 +9,6 @@ type ResponseInfoProps = {
   infoAboutRequestCountry: [],
   currentRequestId: number,
   loading: string,
-  dispatch: any,
 }
 
 const ResponseInfo: React.FunctionComponent<ResponseInfoProps> = ({
@@ -18,7 +17,6 @@ const ResponseInfo: React.FunctionComponent<ResponseInfoProps> = ({
   infoAboutRequestCountry,
   currentRequestId,
   loading,
-  dispatch,
 }) => {
   return (
     <>
@@ -47,7 +45,6 @@ const ResponseInfo: React.FunctionComponent<ResponseInfoProps> = ({
             fontSize={fontSize}
             infoAboutRequestCountry={infoAboutRequestCountry}
             currentRequestId={currentRequestId}
-            dispatch={dispatch}
           />
         )) ||
         (loading === "error" && (

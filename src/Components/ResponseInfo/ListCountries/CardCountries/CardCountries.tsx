@@ -13,7 +13,7 @@ type CardCountriesProps = {
   locale: string,
   fontSize: boolean,
   infoAboutRequestCountry: [],
-  item: {},
+  item: any,
   index: number,
   dispatch: any,
 }
@@ -28,7 +28,6 @@ const CardCountries: React.FunctionComponent<CardCountriesProps> = ({
 }) => {
   return (
     <ListItem
-      key={index}
       button
       onClick={() => {
         dispatch(setModalValueInReducer(true)) &&
