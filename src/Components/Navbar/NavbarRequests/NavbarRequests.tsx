@@ -1,16 +1,14 @@
 import React, { useEffect } from "react"
-import { Toolbar, InputBase } from "@material-ui/core"
-import SearchIcon from "@material-ui/icons/Search"
 import {
   getInfoAboutAllCountries,
   getInfoCountryByShortName,
   getInfoCountryByFullName,
-  // getInfoCountryBySomeCodes,
   getInfoCountryByCode,
   getInfoCountryByCurrency,
 } from "../../../Redux/store/Request/Request.action"
 import { setInputValueInReducer } from "../../../Redux/store/Input/Input.action"
 import { connect } from "react-redux"
+import NavbarRequestRender from "./NavbarRequestRender/NavbarRequestRender"
 
 type NavbarRequestsProps = {
   locale: string,
@@ -44,9 +42,6 @@ const NavbarRequests: React.FunctionComponent<NavbarRequestsProps> = ({
         case 2:
           dispatch(getInfoCountryByFullName(inputValue))
           break
-        // case 3:
-        //   dispatch(getInfoCountryBySomeCodes(inputValue))
-        //   break
         case 3:
           dispatch(getInfoCountryByCode(inputValue))
           break
@@ -61,27 +56,14 @@ const NavbarRequests: React.FunctionComponent<NavbarRequestsProps> = ({
   }
 
   return (
-    <Toolbar className={"header__request__container"}>
-      <SearchIcon
-        className={"header__request__container__search_icon"}
-        onClick={() => handlerDispatchRequest()}
-      />
-      <InputBase
-        value={inputValue}
-        placeholder={
-          (!currentRequestId &&
-            ((locale === "En" && "Chose request") || "Выберите запрос")) ||
-          (locale === "En" && "Input data") ||
-          "Введите данные"
-        }
-        className={`header__request__container__input ${
-          (fontSize && "big_font_size") || "normal_font_size"
-        }`}
-        disabled={(!currentRequestId && true) || false}
-        onInput={(e) => handlerInputSearchBox(e)}
-        onKeyPress={(e) => handlerDispatchRequest(e)}
-      />
-    </Toolbar>
+    <NavbarRequestRender
+      locale={locale}
+      fontSize={fontSize}
+      currentRequestId={currentRequestId}
+      inputValue={inputValue}
+      handlerDispatchRequest={handlerDispatchRequest()}
+      handlerInputSearchBox={handlerInputSearchBox}
+    />
   )
 }
 

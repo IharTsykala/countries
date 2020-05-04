@@ -7,7 +7,6 @@ const arrayRequests = [
   ["all", "все страны"],
   ["name", "краткое имя"],
   ["fullName", "полное имя"],
-  // ["listOfCode", "список кодов"],
   ["code", "код страны"],
   ["currency", "валюта страны"],
 ]
