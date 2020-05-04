@@ -1,10 +1,8 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Toolbar, Button } from "@material-ui/core"
-import ZoomInIcon from "@material-ui/icons/ZoomIn"
-import ZoomOutIcon from "@material-ui/icons/ZoomOut"
-import { setFontSizeInStore } from "../../../Redux/store/Styles/Styles.action"
 import { connect } from "react-redux"
 import NavbarVersionLanguage from "./NavbarVersionLanguage/NavbarVersionLanguage"
+import NavbarVersionZoom from "./NavbarVersionZoom/NavbarVersionZoom"
 
 type NavbarVersionProps = {
   locale: string,
@@ -19,15 +17,7 @@ const NavbarVersion: React.FunctionComponent<NavbarVersionProps> = ({
 }) => {
   return (
     <Toolbar className={"header__version__container"}>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => dispatch(setFontSizeInStore(!fontSize))}
-      >
-        {(!fontSize && (
-          <ZoomInIcon className={"header__version__container__view"} />
-        )) || <ZoomOutIcon className={"header__version__container__view"} />}
-      </Button>
+      <NavbarVersionZoom fontSize={fontSize} dispatch={dispatch} />
       <NavbarVersionLanguage
         locale={locale}
         fontSize={fontSize}
