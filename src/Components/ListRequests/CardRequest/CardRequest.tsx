@@ -7,6 +7,8 @@ import {
   setCurrentRequestIdInStore,
   setInfoAboutCountriesInStore,
 } from "../../../Redux/store/Request/Request.action"
+import { setLoadingState } from "../../../Redux/store/Loading/Loading.actions"
+import { LoadingState } from "../../../shared/constants/user-from-view-mode.enum"
 
 type CardRequestProps = {
   item: string,
@@ -33,22 +35,16 @@ const CardRequest: React.FunctionComponent<CardRequestProps> = ({
           color="primary"
           onClick={() =>
             dispatch(setCurrentRequestIdInStore(id)) &&
+            dispatch(setLoadingState(LoadingState.Loaded)) &&
+            id !== 0 &&
             dispatch(setInfoAboutCountriesInStore([]))
           }
           className={(fontSize && "big_font_size") || "normal_font_size"}
         >
-          <Typography
-            variant="button"
-            // className={(fontSize && "big_font_size") || "normal_font_size"}
-          >
+          <Typography variant="button">
             {(locale === "En" && "Name request:") || "Имя запроса:"}
           </Typography>
-          <Typography
-            variant="h4"
-            // className={(fontSize && "big_font_size") || "normal_font_size"}
-          >
-            {item}
-          </Typography>
+          <Typography variant="h4">{item}</Typography>
         </Button>
       </ListItem>
       <Divider variant="inset" component="li" />
