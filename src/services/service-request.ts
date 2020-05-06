@@ -6,9 +6,9 @@ export default class ServiceRequest {
       if (localStorage.getItem(link))
         return JSON.parse(localStorage.getItem(link) || "[]")
       else {
-        const request = await axios.get(link)
-        localStorage.setItem(link, JSON.stringify(request.data))
-        return request.data
+        const response = await axios.get(link)
+        localStorage.setItem(link, JSON.stringify(response.data))
+        return response.data
       }
     } catch (e) {
       console.log(e)

@@ -5,7 +5,7 @@ import CardRequest from "./CardRequest/CardRequest"
 
 const arrayRequests = [
   ["all", "все страны"],
-  ["name", "краткое имя"],
+  ["short name", "краткое имя"],
   ["fullName", "полное имя"],
   ["code", "код страны"],
   ["currency", "валюта страны"],
