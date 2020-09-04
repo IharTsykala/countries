@@ -20,7 +20,7 @@
     "eslint-plugin-react-redux": "^3.0.3",
     "gh-pages": "^2.2.0",
     "node-sass": "^4.14.0",
-    "react": "0.0.0-experimental-e5d06e34b",
+    "react": "0.14.0",
     "react-dom": "0.0.0-experimental-e5d06e34b",
     "react-redux": "^7.2.0",
     "react-scripts": "3.4.1",
